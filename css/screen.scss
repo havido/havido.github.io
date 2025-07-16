@@ -12,3 +12,24 @@
 @import "forms";
 @import "navigation";
 @import "footer";
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 0.75em 1em;
+  border-radius: 999px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s, background-color 0.3s;
+}
+
+#backToTop:hover {
+  opacity: 1;
+  background-color: #555;
+}

@@ -4,26 +4,103 @@ description: We've built an amazing team of developers, marketers, designers and
 image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 ---
 
-<section class="hero" style="background-image: url({% include relative-src.html src=page.image %})">
+<section class="hero" style="background-image: url('../images/about-1.jpeg'); position: relative;">
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		background: linear-gradient(to bottom,
+			rgba(0,0,0,1) 0%,
+			rgba(0,0,0,0.5) 10%,
+			rgba(0,0,0,0.5) 90%,
+			rgba(0,0,0,1) 100%);
+	">
+	</div>
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
-			<h1 class="editable">Our Story</h1>
-			<p class="subtext editable">We have an extremely talented team whose sole goal is to bring you closer to the people around you.</p>
+			<h1 class="editable">About Me</h1>
+			<p class="subtext editable">
+				I'm Vi Do - a part-time coder and full-time dreamer, as well as the proud owner of way too many bucket list items :P
+			</p>
+			<p class="subtext editable">
+				By day, I’m a UBC Computer Science student trying (desperately) to outsmart bugs, 
+				deploy AWS Lambda functions and pray to the cloud gods they work in prod, 
+				and survive on an unhealthy amount of caffeine and vibes™. 
+				By night, I’m... still that, but now I’m also making websites like this one, 
+				knitting scarves, hiking in the rain, or impulse-getting piercings (current count: 8).
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="hero" style="background-image: url('../images/about-2.jpg'); position: relative;">
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		background: linear-gradient(to bottom,
+			rgba(0,0,0,1) 0%,
+			rgba(0,0,0,0.4) 10%,
+			rgba(0,0,0,0.4) 90%,
+			rgba(0,0,0,1) 100%);
+	">
+	</div>
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<p class="subtext editable">Some highlights from my villain origin story:
+				<ul class="subtext editable">
+					<li>Slid down a snowy mountain on my butt (10/10 recommend)</li>
+					<li>Ate chess pieces (context not included)</li>
+					<li>Climbed the Grouse Grind voluntarily???</li>
+					<li>TA’ed a Models of Computation course and got way too excited teaching mathematical induction</li>
+					<li>Adopted a cat. He's perfect. And a bit overweight.</li>
+				</ul>
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="hero" style="background-image: url('../images/about-3.jpg'); position: relative;">
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		background: linear-gradient(to bottom,
+			rgba(0,0,0,1) 0%,
+			rgba(0,0,0,0.5) 10%,
+			rgba(0,0,0,0.5) 90%,
+			rgba(0,0,0,1) 100%);
+	">
+	</div>
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<p class="subtext editable">
+				I’m obsessed with building things - web apps, silly Spotify playlists, 
+				snowmen, life plans, you name it. I dream of one day getting a paragliding license, 
+				going glacier hiking, launching a YouTube music channel, and maybe (maybe!) getting a tattoo 
+				that doesn’t make me panic the next day.
+			</p>
+			<p class="subtext editable"></p>
+		</div>
+	</div>
+</section>
+
+<section class="hero" style="background-image: url('../images/about-4.jpeg'); position: relative;">
+	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+		background: linear-gradient(to bottom,
+			rgba(0,0,0,1) 0%,
+			rgba(0,0,0,0.5) 10%,
+			rgba(0,0,0,0.5) 90%,
+			rgba(0,0,0,1) 100%);
+	">
+	</div>
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
+			<p class="subtext editable">
+				This blog is part memory book, part proof that I exist and am doing things. 
+				Most importantly, it’s a reminder to live life boldly, even if it means cliff jumping, 
+				podcasting, or eating hotpot while questioning if free will is an illusion :0
+			</p>
+			<p class="subtext editable"></p>
 		</div>
 	</div>
 </section>
 
 <section class="pad">
 	<div class="container">
-		<p class="editor-link"><a href="cloudcannon:collections/_staff_members" class="btn"><strong>&#9998;</strong> Manage Staff Members</a></p>
-		<ul class="staff">
-			{% for person in site.staff_members %}
-				<li>
-					<div class="square-image" style="background-image: url({% include relative-src.html src=person.image_path %})"></div>
-					<div class="name"><a target="_blank" href="https://twitter.com/{{ person.twitter_username }}">{{ person.name }}</a></div>
-					<div class="position">{{ person.position }}</div>
-				</li>
-			{% endfor %}
-		</ul>
+		<p class="subtext editable">
+			Thanks for visiting. I hope you stick around, or at least steal a bucket list item or two 😌
+		</p>
 	</div>
 </section>

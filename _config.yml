@@ -1,29 +1,29 @@
 # ----
 # Site
 
-title: Frisco Template
-url: "https://brave-submarine.cloudvent.net"
-baseurl:
-google_analytics_key:
-google_maps_javascript_api_key:
-disqus_shortname:
+title: VD
+# url: "https://brave-submarine.cloudvent.net"
+# baseurl:
+# google_analytics_key:
+# google_maps_javascript_api_key:
+# disqus_shortname:
 
-# Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
-logo: /siteicon.png
-description: App marketing template for Jekyll.
-author:
-  name:
-  email:
-  twitter: # twitter username without the @ symbol
-social:
-  name: Frisco Template
-  links:
-    - https://github.com/CloudCannon/frisco-jekyll-template
+# # Values for the jekyll-seo-tag gem (https://github.com/jekyll/jekyll-seo-tag)
+# logo: /siteicon.png
+# description: App marketing template for Jekyll.
+# author:
+#   name:
+#   email:
+#   twitter: # twitter username without the @ symbol
+# social:
+#   name: VD
+#   links:
+#     - https://github.com/CloudCannon/frisco-jekyll-template
 
 # -----
 # Build
 
-timezone: Etc/UTC
+timezone: PDT
 
 permalink: pretty
 

@@ -30,8 +30,12 @@
 			<div class="container">
 				<div class="company-name">
 					<a href="{{ site.baseurl }}/">
-						<span class="dark-logo"><img width="104" height="38" src="{{ site.baseurl }}/images/logo/dark.svg" alt="dark frisco logo"></span>
-						<span class="light-logo"><img width="104" height="38" src="{{ site.baseurl }}/images/logo/light.svg" alt="light frisco logo"></span>
+						<span class="dark-logo">
+							<img width="104" height="38" src="{{ site.baseurl }}/images/house.png" alt="dark house logo">
+						</span>
+						<span class="light-logo">
+							<img width="104" height="38" src="{{ site.baseurl }}/images/house.png" alt="light house logo" style="filter: invert(100%);">
+						</span>
 					</a>
 				</div>
 				{% include navigation.html %}
@@ -41,7 +45,7 @@
 
 		{{ content }}
 
-		<footer>
+		<!-- <footer>
 			<div class="container">
 				<p class="editor-link"><a href="cloudcannon:collections/_data/footer.yml" class="btn"><strong>&#9998;</strong> Edit footer</a></p>
 				<ul class="footer-left-links">
@@ -70,9 +74,15 @@
 					</a>
 				</p>
 			</div>
-		</footer>
+		</footer> -->
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="{{ site.baseurl }}/js/main.js"></script>
+		<button id="backToTop" title="Back to top">&#8679;</button>
+		<script>
+			document.getElementById("backToTop").addEventListener("click", function () {
+				window.scrollTo({ top: 0, behavior: "smooth" });
+			});
+		</script>
 	</body>
 </html>
