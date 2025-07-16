@@ -111,8 +111,18 @@ header {
 
 .subtext {
 	margin-top: 10px;
+	font-size: 1.2rem;
 }
 
+ul.villain-highlights,
+ul.villain-highlights li {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	margin-left: 1.25rem; /* or adjust as needed */
+	list-style-type: disc; /* or 'none' or 'circle' */
+}
 
 .cta {
 	margin: 25px 0 0 0;
