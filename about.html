@@ -1,24 +1,130 @@
 ---
 title: About
-description: We've built an amazing team of developers, marketers, designers and sales people.
-image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
+description: About Vi
+layout: default
 ---
 
-<section class="hero" style="background-image: url('../images/about-1.jpeg'); position: relative;">
-	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-		background: linear-gradient(to bottom,
-			rgba(0,0,0,1) 0%,
-			rgba(0,0,0,0.5) 10%,
-			rgba(0,0,0,0.5) 90%,
-			rgba(0,0,0,1) 100%);
-	">
-	</div>
+<style>
+    .background-fade-container {
+        position: fixed; /* Keep background fixed in viewport */
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; /* Below the content */
+        overflow: hidden; /* Hide overflow if images are larger */
+    }
+
+    .background-fade-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover; /* Cover the container */
+        background-position: center; /* Center the image */
+        opacity: 0; /* Initially hidden */
+        transition: opacity 0.7s ease-in-out; /* Smooth transition for opacity */
+        will-change: opacity; /* Performance hint */
+    }
+
+    .background-fade-image.active {
+        opacity: 1; /* Show the active background */
+    }
+
+    .hero {
+        max-width: 800 wh;
+        display: flex;
+        align-items: center; /* Vertically center text */
+        justify-content: center; /* Horizontally center text */
+        padding: 50px 20px;
+        position: relative; /* For z-index if needed */
+        z-index: 1; /* Keep text above backgrounds */
+        background: transparent;
+    }
+
+    /* Remove the gradient from all hero sections */
+    .hero:before {
+        display: none; /* This removes the gradient overlay */
+    }
+
+    /* Add gradient only to the first hero section */
+    .hero#section-1:before {
+        content: "";
+        background: linear-gradient(to bottom,rgba(0,0,0,.65) 0,rgba(0, 0, 0, 0) 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 300px;
+        display: block; /* Re-enable for first section only */
+    }
+
+    .text-container {
+        margin: auto;
+        max-height: 40%;
+        color: white; /* Text color */
+        background-color: rgba(0, 0, 0, 0.6); /* Slightly darker background for text readability */
+        padding: 30px;
+        border-radius: 8px;
+        z-index: 2; /* Keep text above backgrounds */
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const contentSections = document.querySelectorAll('.hero');
+    const backgroundImages = document.querySelectorAll('.background-fade-image');
+
+    const observerOptions = {
+        root: null, // Use the viewport as the root
+        rootMargin: '0px',
+        threshold: 0.5 // Trigger when 50% of the target is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            const sectionIndex = Array.from(contentSections).indexOf(entry.target);
+            const currentBg = backgroundImages[sectionIndex];
+
+            if (entry.isIntersecting) {
+                // When a section enters the viewport, activate its corresponding background
+                backgroundImages.forEach(bg => bg.classList.remove('active'));
+                currentBg.classList.add('active');
+            }
+            // You could add logic here for more nuanced fading based on entry.intersectionRatio
+            // For a simple switch, isIntersecting is enough.
+        });
+    }, observerOptions);
+
+    contentSections.forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
+
+<div class="background-fade-container">
+    <div class="background-fade-image active" style="background-image: url('../images/about-1.jpeg');" id="bg-1"></div>
+    <div class="background-fade-image" style="background-image: url('../images/about-2.jpeg');" id="bg-2"></div>
+    <div class="background-fade-image" style="background-image: url('../images/about-3.jpg');" id="bg-3"></div>
+    <div class="background-fade-image" style="background-image: url('../images/about-4.jpg');" id="bg-4"></div>
+    <div class="background-fade-image" style="background-image: url('../images/about-5.jpeg');" id="bg-5"></div>
+</div>
+
+<section class="hero" id="section-1">
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
 			<h1 class="editable">About Me</h1>
 			<p class="subtext editable">
 				I'm Vi Do - a part-time coder and full-time dreamer, as well as the proud owner of way too many bucket list items :P
 			</p>
+		</div>
+	</div>
+</section>
+
+<section class="hero" id="section-2">
+	<div class="inner-hero text-container">
+		<div class="hero-text-container">
 			<p class="subtext editable">
 				By day, I’m a UBC Computer Science student trying (desperately) to outsmart bugs, 
 				deploy AWS Lambda functions and pray to the cloud gods they work in prod, 
@@ -30,38 +136,21 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 	</div>
 </section>
 
-<section class="hero" style="background-image: url('../images/about-2.jpg'); position: relative;">
-	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-		background: linear-gradient(to bottom,
-			rgba(0,0,0,1) 0%,
-			rgba(0,0,0,0.4) 10%,
-			rgba(0,0,0,0.4) 90%,
-			rgba(0,0,0,1) 100%);
-	">
-	</div>
+<section class="hero" id="section-3">
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
 			<p class="subtext editable">Some highlights from my villain origin story:</p>
-			<ul class="subtext editable villain-highlights">
-				<li>Slid down a snowy mountain on my butt (10/10 recommend)</li>
-				<li>Ate chess pieces (context not included)</li>
-				<li>Climbed the Grouse Grind voluntarily???</li>
-				<li>TA’ed a Models of Computation course and got way too excited teaching mathematical induction</li>
-				<li>Adopted a cat. He's perfect. And a bit overweight.</li>
-			</ul>
+            <p class="subtext editable">&emsp;&emsp;❄️ Slid down a snowy mountain on my butt (10/10 recommend)
+                <br>&emsp;&emsp;♟️ Ate chess pieces (context not included)
+                <br>&emsp;&emsp;⛰️ Climbed the Grouse Grind voluntarily???
+                <br>&emsp;&emsp;📚 TA’ed a Models of Computation course and got way too excited
+                <br>&emsp;&emsp;😻 Adopted a cat. He's perfect. And a bit overweight.
+            </p>
 		</div>
 	</div>
 </section>
 
-<section class="hero" style="background-image: url('../images/about-3.jpg'); position: relative;">
-	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-		background: linear-gradient(to bottom,
-			rgba(0,0,0,1) 0%,
-			rgba(0,0,0,0.5) 10%,
-			rgba(0,0,0,0.5) 90%,
-			rgba(0,0,0,1) 100%);
-	">
-	</div>
+<section class="hero" id="section-4">
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
 			<p class="subtext editable">
@@ -75,15 +164,7 @@ image: https://source.unsplash.com/BcoGknSqlDc/2000x1322?a=.png
 	</div>
 </section>
 
-<section class="hero" style="background-image: url('../images/about-4.jpeg'); position: relative;">
-	<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-		background: linear-gradient(to bottom,
-			rgba(0,0,0,1) 0%,
-			rgba(0,0,0,0.5) 10%,
-			rgba(0,0,0,0.5) 90%,
-			rgba(0,0,0,1) 100%);
-	">
-	</div>
+<section class="hero" id="section-5">
 	<div class="inner-hero text-container">
 		<div class="hero-text-container">
 			<p class="subtext editable">
